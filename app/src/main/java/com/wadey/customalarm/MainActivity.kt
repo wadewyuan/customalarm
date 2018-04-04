@@ -12,6 +12,8 @@ import android.widget.TextView
 import android.widget.TimePicker
 import java.util.*
 
+const val ALARM_ON = "alarm_on"
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var timePicker: TimePicker
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity() {
             Log.d("[WY DEBUG]", "$hourString:$minuteString")
             setAlarmText("Alarm On $hourString:$minuteString")
 
+            // put extra in intent to tell receiver that it's an "ON" signal
+            intent.putExtra(ALARM_ON, true)
             // create a pending intent that delays the intent until specified calendar time
             pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
             // set alarm manager to wake up after calendar time
@@ -55,6 +59,10 @@ class MainActivity : AppCompatActivity() {
         alarmOffButton.setOnClickListener {
             setAlarmText("Alarm Off")
             alarmManager.cancel(pendingIntent)
+            // put extra in intent to tell receiver that it's an "OFF" signal
+            intent.putExtra(ALARM_ON, false)
+            // broadcast the intent
+            sendBroadcast(intent)
             Log.d("[WY DEBUG]", "Alarm canceled.")
         }
     }
