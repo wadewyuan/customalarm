@@ -1,4 +1,4 @@
-package com.wadey.customalarm
+package com.wadey.busalarm
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

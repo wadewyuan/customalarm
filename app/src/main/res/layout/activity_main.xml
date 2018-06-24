@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.wadey.customalarm.MainActivity">
+        tools:context="com.wadey.busalarm.MainActivity">
 
     <TimePicker
             android:layout_width="384dp"

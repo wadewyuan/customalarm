@@ -1,4 +1,4 @@
-package com.wadey.customalarm
+package com.wadey.busalarm
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

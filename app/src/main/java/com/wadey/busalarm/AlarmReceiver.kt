@@ -1,4 +1,4 @@
-package com.wadey.customalarm
+package com.wadey.busalarm
 
 import android.content.BroadcastReceiver
 import android.content.Context

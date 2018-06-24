@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Custom Alarm</string>
+    <string name="app_name">Bus Alarm</string>
     <string name="alarm_on">Alarm On</string>
     <string name="alarm_off">Alarm Off</string>
     <string name="alarm_text_placeholder">Did you set your alarm ?</string>

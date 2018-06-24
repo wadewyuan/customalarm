@@ -1,4 +1,4 @@
-package com.wadey.customalarm
+package com.wadey.busalarm
 
 import android.app.AlarmManager
 import android.app.PendingIntent

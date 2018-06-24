@@ -1,6 +1,10 @@
-package com.wadey.customalarm
+package com.wadey.busalarm
 
+import android.app.Notification
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
@@ -34,6 +38,17 @@ class RingtoneService : Service() {
                 Log.d("[WY DEBUG]", "Music not playing and Alarm On button clicked, music will start")
                 mediaPlayer = MediaPlayer.create(this, R.raw.tone1)
                 mediaPlayer.start()
+
+                // put notification here
+                val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                val mainActivityIntent = Intent(this.applicationContext, MainActivity::class.java)
+                val mainActivityPendingIntent = PendingIntent.getActivity(this, 0, mainActivityIntent, 0)
+                val alarmNotification = Notification.Builder(this)
+                        .setContentTitle("An alarm is going off")
+                        .setContentText("Click me")
+                        .setContentIntent(mainActivityPendingIntent)
+                        .build()
+                notificationManager.notify(0, alarmNotification)
             } else {
                 Log.d("[WY DEBUG]", "Music not playing and Alarm Off button clicked, nothing will be done")
             }
