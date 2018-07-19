@@ -9,6 +9,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
     <!-- end of permissions required by aMap API -->
 
     <application
@@ -18,7 +23,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".AMapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -31,12 +36,14 @@
         <service
                 android:name=".RingtoneService"
                 android:enabled="true"/>
+        <service android:name="com.amap.api.location.APSService" />
+
 
         <meta-data
                 android:name="com.amap.api.v2.apikey"
                 android:value="2c9a34d60c93c9b0f560a895f623b507"/>
 
-        <activity android:name=".AMapActivity">
+        <activity android:name=".MainActivity">
         </activity>
     </application>
 
